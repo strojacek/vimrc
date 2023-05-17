@@ -1,0 +1,122 @@
+set nocompatible
+filetype off
+set nu
+syntax enable
+set path+=**
+set wildmenu
+set belloff=all
+colorscheme slate
+command! MakeTags !ctags -R .
+
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+set guifont=Monaco:h20
+set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
+
+call plug#begin()
+" The default Plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/Plugged'
+"   - Vim (Windows): '~/vimfiles/Plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/Plugged'
+" You can specify a custom Plugin directory by passing it as the argument
+"   - e.g. `call Plug#begin('~/.vim/Plugged')`
+"   - Avoid using standard Vim directory names like 'Plugin'
+
+" Make sure you use single quotes
+Plug 'posva/vim-vue'
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'othree/html5.vim'
+
+Plug 'elzr/vim-json'
+
+Plug 'preservim/nerdtree'
+
+Plug 'jistr/vim-nerdtree-tabs'
+
+Plug 'vimwiki/vimwiki'
+
+Plug 'baruchel/vim-notebook'
+
+Plug 'lervag/vimtex'
+
+Plug 'jalvesaq/Nvim-R'
+
+Plug 'Shougo/vimfiler.vim'
+
+Plug 'mileszs/ack.vim'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'Shougo/deoplete.nvim'
+
+Plug 'Xuyuanp/nerdtree-git-Plugin'
+
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'scrooloose/nerdcommenter'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'morhetz/gruvbox'
+
+Plug 'luisjure/csound-vim'
+
+Plug 'ycm-core/YouCompleteMe'
+
+Plug 'jceb/vim-orgmode'
+
+Plug 'tpope/vim-speeddating'
+
+Plug 'mtikekar/vim-bsv'
+
+Plug 'rhysd/vim-grammarous'
+
+Plug 'makerj/vim-pdf'
+
+Plug 'gisraptor/vim-lilypond-integrator'
+
+Plug 'tpope/vim-dadbod'
+
+Plug 'petRUShka/vim-sage'
+
+Plug 'kamykn/spelunker.vim'
+
+Plug 'vbextreme/dumpx'
+
+" All of your Plugs must be added before the following line
+call plug#end()            " required
+set tabstop=4
+syntax on
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+au FileType php setl ofu=phpcomplete#CompletePHP
+au FileType ruby,eruby setl ofu=rubycomplete#Complete
+au FileType html,xhtml setl ofu=htmlcomplete#CompleteTags
+au FileType c setl ofu=ccomplete#CompleteCpp
+au FileType css setl ofu=csscomplete#CompleteCSS
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+autocmd BufRead,BufNewFile *.vue setfiletype html
+autocmd BufRead scp://* :set bt=acwrite
+set splitbelow
+syntax on
+"open terminal below all splits
+cabbrev bterm bo term
+if has('persistent_undo')      "check if your vim version supports it
+  set undofile                 "turn on the feature
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif
