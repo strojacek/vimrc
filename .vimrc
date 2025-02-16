@@ -25,19 +25,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'posva/vim-vue'
-
-Plugin 'pangloss/vim-javascript'
-
-Plugin 'othree/html5.vim'
-
-Plugin 'elzr/vim-json'
-
 Plugin 'preservim/nerdtree'
 
 Plugin 'jistr/vim-nerdtree-tabs'
-
-Plugin 'vimwiki/vimwiki'
 
 Plugin 'baruchel/vim-notebook'
 
@@ -75,8 +65,6 @@ Plugin 'jceb/vim-orgmode'
 
 Plugin 'tpope/vim-speeddating'
 
-Plugin 'mtikekar/vim-bsv'
-
 Plugin 'rhysd/vim-grammarous'
 
 Plugin 'makerj/vim-pdf'
@@ -84,8 +72,6 @@ Plugin 'makerj/vim-pdf'
 Plugin 'gisraptor/vim-lilypond-integrator'
 
 Plugin 'tpope/vim-dadbod'
-
-Plugin 'petRUShka/vim-sage'
 
 Plugin 'kamykn/spelunker.vim'
 
